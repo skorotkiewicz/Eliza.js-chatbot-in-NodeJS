@@ -92,51 +92,81 @@ http.createServer(function (req, res) {
 	  ]]
 	*/
 
-	["xnone", 0, [ 
-	  ["*", [ 
-		  "Nierozumiem cię za bardzo." ,
-		  "kontynuuj :)" ,
-		  "napisz coś więcej", 
-		  "Powiedz mi więcej na ten temat."  
-	  ]] 
-	]], 
-	["przepraszam", 0, [ 
-	  ["*", [ 
-		  "Proszę nie przepraszać." ,
-		  "Przeprosiny nie są konieczne." ,
-		  "Powiedziałem, że przeprosiny nie są potrzebne." ,
-		  "To nie zawracaj mi tym głowy:)" 
-	  ]] 
-	]], 
+	["xnone", 0, [
+	 ["*", [
+	     "I'm not sure I understand you fully.",
+	     "Please go on.",
+	     "What does that suggest to you ?",
+	     "Do you feel strongly about discussing such things ?",
+	     "That is interesting.  Please continue.",
+	     "Tell me more about that.",
+	     "Does talking about this bother you ?"
+	  ]]
+	]],
+	["sorry", 0, [
+	 ["*", [
+	     "Please don't apologise.",
+	     "Apologies are not necessary.",
+	     "I've told you that apologies are not required.",
+	     "It did not bother me.  Please continue."
+	  ]]
+	]],
 	["apologise", 0, [
 	 ["*", [
-		 "goto sorry"
+	     "goto sorry"
 	  ]]
 	]],
-	["pamiętam", 5, [
-	 ["* pamiętam *", [
-		 "Często mówisz o (2) ?",
-		 "Czy ciągłe myślenie o (2) nie zawraca ci w głowie ?",
-		 "Co innego jeszcze wspominasz ?"
+	["remember", 5, [
+	 ["* i remember *", [
+	     "Do you often think of (2) ?",
+	     "Does thinking of (2) bring anything else to mind ?",
+	     "What else do you recollect ?",
+	     "Why do you remember (2) just now ?",
+	     "What in the present situation reminds you of (2) ?",
+	     "What is the connection between me and (2) ?",
+	     "What else does (2) remind you of ?"
 	  ]],
-	 ["* czy pamiętasz *", [
-		 "Czy uważasz że zapomnę (2) ?",
-		 "Czemu sądzisz że myślę o (2) teraz ?",
-		 "Co o (2) ?"
+	 ["* do you remember *", [
+	     "Did you think I would forget (2) ?",
+	     "Why do you think I should recall (2) now ?",
+	     "What about (2) ?",
+	     "goto what",
+	     "You mentioned (2) ?"
 	  ]],
-	 ["* pamiętasz *", [
-		 "Jakbym mogła zappomnieć (2) ?"
+	 ["* you remember *", [
+	     "How could I forget (2) ?",
+	     "What about (2) should I remember ?",
+	     "goto you"
 	  ]]
 	]],
-	["jeśli", 3, [
-	 ["* jeśli *", [
-		 "Do you think it's likely that (2) ?",
-		 "Do you wish that (2) ?",
-		 "What do you know about (2) ?",
-		 "Really, if (2) ?",
-		 "What would you do if (2) ?",
-		 "But what are the chances that (2) ?",
-		 "What does this speculation lead to ?"
+	["forget", 5, [
+	 ["* i forget *", [
+	     "Can you think of why you might forget (2) ?",
+	     "Why can't you remember (2) ?",
+	     "How often do you think of (2) ?",
+	     "Does it bother you to forget that ?",
+	     "Could it be a mental block ?",
+	     "Are you generally forgetful ?",
+	     "Do you think you are suppressing (2) ?"
+	  ]],
+	 ["* did you forget *", [
+	     "Why do you ask ?",
+	     "Are you sure you told me ?",
+	     "Would it bother you if I forgot (2) ?",
+	     "Why should I recall (2) just now ?",
+	     "goto what",
+	     "Tell me more about (2)."
+	  ]]
+	]],
+	["if", 3, [
+	 ["* if *", [
+	     "Do you think it's likely that (2) ?",
+	     "Do you wish that (2) ?",
+	     "What do you know about (2) ?",
+	     "Really, if (2) ?",
+	     "What would you do if (2) ?",
+	     "But what are the chances that (2) ?",
+	     "What does this speculation lead to ?"
 	  ]]
 	]],
 	["dreamed", 4, [
